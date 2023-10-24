@@ -1,12 +1,15 @@
-import Vue from 'vue'
-import App from './App.vue'
-import store from './store'
-import vuetify from './plugins/vuetify'
+import Vue from 'vue';
+import App from './App.vue';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
+import './assets/main.css';
 
-Vue.config.productionTip = false
+Vue.use(Vuetify);
 
 new Vue({
-  store,
-  vuetify,
-  render: h => h(App)
-}).$mount('#app')
+  el: '#app',
+  vuetify: new Vuetify({
+    rtl: true,
+  }),
+  render: (h) => h(App),
+});
